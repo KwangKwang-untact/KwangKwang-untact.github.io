@@ -1,1 +1,645 @@
-KwangKwang-untact/KwangKwang-untact.github.io
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untact Spot (안전한 장소를 소개하다)</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="55f4338c-c7d7-4342-90cd-1400eb2f1513" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏕️</span></div><h1 class="page-title">Untact Spot (안전한 장소를 소개하다)</h1></header><div class="page-body"><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="77a151ee-f274-43ba-b175-3b04799f5941"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-blue"><strong>답답하고 우울하다면?  마주치지 말고 색다른 장소로 떠나봐요 😀</strong></mark></div></figure><figure id="97eba258-ec16-4054-82f0-501bafad9ffe" class="image"><a href="Untact%20Spot%20(%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2%E1%84%92%E1%85%A1%E1%84%83%E1%85%A1)%2097eba258ec16405482f0501bafad9ffe/kwangkwang-untact-onepager.png"><img style="width:1280px" src="Untact%20Spot%20(%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2%E1%84%92%E1%85%A1%E1%84%83%E1%85%A1)%2097eba258ec16405482f0501bafad9ffe/kwangkwang-untact-onepager.png"/></a></figure><div id="9c0c93d4-839f-480e-91b8-998600c211b9" class="collection-content"><h4 class="collection-title">Introduction</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Created</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th></tr></thead><tbody><tr id="7946af3c-86eb-4390-949e-01708de74ffa"><td class="cell-title"><a href="Untact%20Spot%20(%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2%E1%84%92%E1%85%A1%E1%84%83%E1%85%A1)%2097eba258ec16405482f0501bafad9ffe/Introduction%209c0c93d4839f480e91b8998600c211b9/One-pager%20Pitch%20Deck%207946af3c86eb4390949e01708de74ffa.html"><span class="icon">⚡</span>One-pager Pitch Deck</a></td><td class="cell-Sf?f"><time>@Dec 17, 2020 9:12 PM</time></td><td class="cell-{=qU"><span class="selected-value select-value-color-orange">image</span><span class="selected-value select-value-color-green">one-pager</span></td></tr><tr id="160be2bc-b63f-4180-b9b9-7afc3a4885a3"><td class="cell-title"><a href="Untact%20Spot%20(%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2%E1%84%92%E1%85%A1%E1%84%83%E1%85%A1)%2097eba258ec16405482f0501bafad9ffe/Introduction%209c0c93d4839f480e91b8998600c211b9/Pitch%20Deck%20160be2bcb63f4180b9b97afc3a4885a3.html"><span class="icon">📃</span>Pitch Deck</a></td><td class="cell-Sf?f"><time>@Dec 17, 2020 9:12 PM</time></td><td class="cell-{=qU"><span class="selected-value select-value-color-pink">PDF</span></td></tr></tbody></table></div><p id="2b0c0a6a-e646-4d00-af32-fd24e8ad7901" class="">장기화된 코로나 팬데믹으로 인하여 우리 사회의 현대인들에게 코로나 블루를 넘어 코로나 레드 현상이 발생하고 있습니다. 이에 안전한 장소를 소개하는 Untact Spot 서비스를 기획했습니다.</p><p id="a1b39c4a-fc62-4c1b-82cb-964a7b332d12" class="">본 서비스에서는 사람들의 발길이 적은 장소를 선정하여 가볍게 다녀올 곳, 차박, 캠핑 등 사용자의 니즈에 맞게 다양한 장소를 추천해 줍니다.</p><hr id="5317b33a-8c99-4662-a603-6dba721cfb22"/><blockquote id="5761b723-6be6-47d7-9e1e-bb0e03856d3a" class="">코로나 블루 증가, 규칙적인 야외활동 권장</blockquote><p id="a8f32e39-a738-497b-a7fc-8921c1a19485" class="">장기화된 코로나 펜데믹으로 인하여 감염자가 급등하고, 사회적 거리두기 단계가 격상됨에 따라 코로나 블루로 대두되는 우울감 등과 같은 각종 정신 질환으로 고통을 호소하는 이들이 증가하고 있습니다. 이에 정부 관계자들은 사회적 소통의 중요성을 알리고 힘들더라도 규칙적인 야외활동을 할 것을 권장하고 있습니다. 이러한 문제 해결을 위해 국내 지자체에서는 녹지 공간을 조성하여 힐링 공간으로 만드는 등 다양한 노력을 가하고 있습니다.
+
+이에 저희 광광언택트팀은 <mark class="highlight-yellow_background"><strong>&quot;언택트 관광 솔루션, </strong></mark><mark class="highlight-yellow_background"><strong>Untact Spot</strong></mark><mark class="highlight-yellow_background"><strong>&quot;</strong></mark>을 제안합니다.
+언택트 관광은 접촉을 뜻하는 콘택트(contact)에 부정, 반대를 뜻하는 언(un)을 붙인 신조어 언택트와 관광을 합쳐 사용자의 접촉을 피할 수 있는 관광 및 여행 형태를 의미하고 있습니다. 이에 각종 외부 활동 중 차박, 캠핑, 소도시 여행, 소규모 엑티비티의 관심이 뜨거워 지고 있으며, 이러한 사용자의 니즈에 맞게 코로나 시국에 걸맞은 언택트 관광 장소를 소개합니다.</p><hr id="c8cbb08f-3918-4a65-a5ce-82f97cc693d0"/><ul id="ebb34228-7084-4181-80e4-39ee1b2a2d7a" class="toggle"><li><details open=""><summary>목차</summary><nav id="61ec29b5-c2f8-4821-b13c-fd2334ed3e73" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#74f9a981-4f8c-44cc-996e-bbf9578f6a6b">What we do</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#aa0bd4e1-575b-45b2-998b-0d907c15f412">Feature</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#059461d9-9fb6-44e2-8c01-4e316037984b">Data source</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8c554c63-b2a9-45b9-a5a4-92b2fa19719a">Development</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#da72a7be-09b1-4622-8bf4-cc6a19acc69d">How to do</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fc0cf0e6-e49b-4a40-9626-57f64887c889">Team. 광광언택트</a></div></nav></details></li></ul><h1 id="74f9a981-4f8c-44cc-996e-bbf9578f6a6b" class="">What we do</h1><p id="e0d56ab0-647e-4031-b12a-4da3ecbc464f" class="">코로나로 인해 새로운 관광 트렌드인 &#x27;언택트 관광&#x27;에 대한 관심도가 높아진 가운데, 정보의 양이 적고 접근이 쉽지 않아 문제가 됩니다.
+예를 들어 메스컴을 통한 특정 언택트 여행 장소가 알려지게 되면 급 대중화가 되어 더 이상 &#x27;언택트&#x27;가 아닌 상황이 발생하곤 합니다.
+교통량 세분화 데이터, 관광 데이터, 지역별 유동인구 통계 데이터를 활용하여 상대적으로 한적한 관광지를 추천해 주는 기능을 제공하고자 합니다.<div class="indented"><p id="69344665-5505-44a5-a80b-d347816320a5" class="">
+</p><blockquote id="edfcce09-26bc-4486-b51f-f53bc5040080" class="">Corona</blockquote><p id="6b394d42-a4d7-455e-943d-9d3389ff60d8" class="">코로나 블루로 시작되어 코로나 레드까지, 현대인의 심리 상태에 적신호가 들어왔습니다. 이러한 심리 상태를 극복하기 위해 전문가들은 마음 건강을 위한 &#x27;심리적 방역&#x27;을 해야 한다고 말하며 &#x27;야외 활동&#x27;을 권유합니다.</p><p id="f0ba0ab6-64a2-422d-9d41-660530e7bb4c" class="">하지만 코로나 시국에 여행은 위험 요소가 많아 꺼려지게 됩니다. 이러한 굴레에서 벗어나고자 우리의 서비스는 위험 요소로 부터 사용자가 안전한 곳으로 여행을 갈 수 있도록 솔루션을 제공해 줍니다.</p><p id="71704af3-31fd-476d-9cc9-21a1d404486e" class="">
+</p><blockquote id="c6e81d7e-6978-4bf4-a7c0-8b3b8642c0c3" class="">Post Corona</blockquote><p id="60e8b11b-839e-4874-b0ff-47639e0803c8" class="">코로나가 끝난 이후에도 한적하고 조용한 여행을 하고자 하는 사용자에게 적합한 서비스로 사용될 수 있습니다. 사용자가 인원, 여행 형태, ... 등을 필터로 선택할 수 있어 맞춤형 여행을 추천받고 싶은 사용자의 니즈를 충족해 줄 수 있습니다.</p></div></p><p id="8af7c6bc-b96a-41ae-af03-13f1a5247e9c" class="">
+</p><h1 id="aa0bd4e1-575b-45b2-998b-0d907c15f412" class="">Feature</h1><div id="88299c80-bf65-430f-be3e-7e839894da93" class="column-list"><div id="658f7004-a9b5-41ba-95f2-6e362f5ed1d6" style="width:33.333333333333336%" class="column"><p id="1bbf18e4-855f-4022-83cc-49ab0c8611ec" class="block-color-pink_background">  <strong>사회 문제 해소 (코로나 블루)</strong></p></div><div id="559c9bfe-e27c-455c-8a24-f27f81b11620" style="width:33.333333333333336%" class="column"><p id="d867aa70-51dc-4817-894c-d8537e58477d" class="block-color-pink_background">         <strong>사회적 거리두기 준수</strong></p></div><div id="ffa449d7-47f9-46bf-8651-b60d33eb1854" style="width:33.33333333333333%" class="column"><p id="78b03a68-0337-4fdf-bd1f-1ec151347d13" class="block-color-pink_background">            <strong>지역 경제 활성화</strong></p></div></div><p id="5070677e-0b85-4aa7-98eb-ac985d5e3346" class="">앞서 말했듯 코로나 블루로 대두되는 우울감 등과 같은 각종 정신 질환으로 고통을 호소하는 이들이 증가하고 있습니다. 그렇기에 이를 &quot;언택트 관광 솔루션, Untact Spot&quot;을 통해 우울감을 호소하는 사람들의 우울감 해소에 큰 도움을 줄 수 있을 것으로 예상되며, 주요 기대 효과는 아래와 같습니다.<div class="indented"><p id="ecf7c831-49f2-4f50-9fdf-57104a8f9d14" class="">
+</p><ol id="083b0e2e-e93c-407d-a74d-263431f59125" class="numbered-list" start="1"><li>코로나 블루 증상 중 하나인 우울감을 야외 언택트 관광을 통해 해소함으로써 <strong>사회 문제 해소</strong>에 기여</li></ol><ol id="57c1d50f-f780-4d5f-b25f-41c7a143b38f" class="numbered-list" start="2"><li>코로나 시국에 언택트 관광을 통해 <strong>거리두기 방역 수칙을 준수</strong>하며, 여행에 대한 니즈를 충족</li></ol><ol id="f1b398ca-5af5-46e8-b797-47a4c584f93a" class="numbered-list" start="3"><li>하나의 언택트 관광 장소로 사람들이 몰리는 것을 방지하여 소외 지역으로의 발걸음을 증가시킬 수 있을 것으로 예상되며, 이에 침체된<strong> </strong><strong>지역 경제 활성화에 기여</strong></li></ol></div></p><p id="880ecfda-d515-4412-b504-1bffa8ff159e" class="">
+</p><p id="600c27c9-b077-413d-9b47-724489dc7932" class="">공공데이터를 활용하여 코로나 블루와 같은 우울 증상을 해결하고, 나아가 경제 분야에도 기여를 할 수 있으며, 코로나 시국이 종료된 시점에도 한적한 장소 및 조용한 곳을 찾아 떠나는 여행객의 니즈 또한 충족시켜 줄 것으로 기대됩니다.</p><p id="bbf661b4-df9d-40e4-a703-81150bd681bb" class="">
+</p><h1 id="059461d9-9fb6-44e2-8c01-4e316037984b" class="">Data source</h1><p id="c36b14b4-10e6-4007-80d5-810f167fc136" class=""><strong>교통량 세분화</strong><div class="indented"><ol id="ed3df296-5f3e-4ccf-96bc-fc1119ed0639" class="numbered-list" start="1"><li>실시간 영업소별 교통량 → <a href="https://www.data.go.kr/data/15059055/openapi.do">https://www.data.go.kr/data/15059055/openapi.do</a><p id="d66278be-7f34-4bf8-99c3-0c4df9a16de4" class="">→ 영업소 단위 통계</p></li></ol><ol id="1d7f91f2-114a-47a5-8ca5-689af932639a" class="numbered-list" start="2"><li>통행거리별 교통량 → <a href="https://www.data.go.kr/data/15059141/openapi.do">https://www.data.go.kr/data/15059141/openapi.do</a><p id="67caa438-7a23-4941-9ae5-5a225d032898" class="">→ 일자별 통계</p></li></ol><ol id="fa216504-2f84-4d06-a22f-fdadd1140ed7" class="numbered-list" start="3"><li>노선별 전체 영업소 교통량 → <a href="https://www.data.go.kr/data/15058611/openapi.do">https://www.data.go.kr/data/15058611/openapi.do</a></li></ol><ol id="71fb14cc-c137-47c6-9a47-a24dc7c8f0d5" class="numbered-list" start="4"><li>교통량 전국 일자별 통계 → <a href="http://data.ex.co.kr/openapi/basicinfo/openApiInfoM?apiId=0617">http://data.ex.co.kr/openapi/basicinfo/openApiInfoM?apiId=0617</a></li></ol></div></p><p id="5cb0f1b2-40af-4ad2-87e2-fdf51a71d7a0" class=""><strong>관광 데이터</strong><div class="indented"><ol id="620c4b0d-0194-4ec3-9ee4-8fd9733df04e" class="numbered-list" start="1"><li>문체부 관공 통계 → <a href="https://www.data.go.kr/data/15057320/openapi.do">https://www.data.go.kr/data/15057320/openapi.do</a><p id="58f3af63-654e-46e9-9a0b-60fb2cf343b3" class="">→ 관광 관련 종합 세트</p></li></ol></div></p><p id="e2d72521-0dda-410b-8bcf-2446389dfd2a" class=""><strong>지역별 유동인구 통계</strong><div class="indented"><ol id="dfa2d952-934b-44ca-97c3-e96fdf56586a" class="numbered-list" start="1"><li>SK 빅데이터 허브 → <a href="https://www.bigdatahub.co.kr/index.do">https://www.bigdatahub.co.kr/index.do</a><p id="8a78f918-2854-485e-ae8e-7742d0f156d5" class="">→ SK 통신사 사용자 유동량 + T Map기반 이동 데이터</p></li></ol></div></p><h1 id="8c554c63-b2a9-45b9-a5a4-92b2fa19719a" class="">Development</h1><h3 id="da72a7be-09b1-4622-8bf4-cc6a19acc69d" class="">How to do</h3><blockquote id="2cd8bda2-3d6a-42c9-b13d-7225853b0442" class="">🎨  |  Design</blockquote><p id="527dfec2-28f3-4e90-aa3f-1b23c16a615e" class="">XD를 활용하여 Wireframe 제작 후 GUI 디자인을 진행하고, 완성된 결과물을 Zeplin을 활용하여 개발을 맡고 있는 팀원들과 협업</p><blockquote id="01774d0f-c4a2-4bef-b088-097faf898f7e" class="">💻  |  Development</blockquote><ul id="fca37646-71c0-4db6-ace2-a559d3883acb" class="bulleted-list"><li>Back-end<p id="d13fbf09-4bd6-48fa-9019-44b70143f49d" class="">node.js와 express.js를 활용하여 다양한 공공데이터를 mongodb와 redis을 이용하여 캐싱하고, 해당 정보를 그룹화 알고리즘을 응용하여 처리 후 서빙하는 REST API를 구축</p></li></ul><ul id="0d139c79-528e-429d-9453-655213ee819a" class="bulleted-list"><li>Front-end<p id="4257f500-e9f0-4660-8626-1025775a511c" class="">react를 기반으로 한 모바일 웹이며, 추가적인 모듈로 mobx, kakao map을 통해 지도기능을 추가</p><p id="02ab6eb8-bc12-46e6-aa47-14c9260a7f78" class="">
+</p></li></ul><ul id="200018fa-cac3-4896-81c2-ad03eb753c12" class="bulleted-list"><li><strong>예상 개발 과정</strong><ol id="0ae5252d-34e2-4c86-b4e0-9185e3b95853" class="numbered-list" start="1"><li>UI/UX 페이지 설계 및 디자인 제작</li></ol><ol id="dd317d7e-8771-49c3-a9db-edda78b72dcd" class="numbered-list" start="2"><li>공공데이터 분석 및 API 설계</li></ol><ol id="6a043be1-d23f-4835-8608-c975f5112abe" class="numbered-list" start="3"><li>백엔드 기능 개발
+REST API 설계 및 개발, 데이터베이스 설계 및 구축</li></ol><ol id="f47ad460-2a27-4e0b-884d-a4bbe7430b04" class="numbered-list" start="4"><li>웹 개발 및 배포<p id="427e94ea-5d56-4a13-83ba-01c3f0439a14" class="">react를 사용하여 웹 어플리케이션을 제작 및 배포합니다 </p></li></ol></li></ul><p id="71a04533-ace8-47a2-8d2f-fa1b30c47c80" class="">
+</p><h3 id="fc0cf0e6-e49b-4a40-9626-57f64887c889" class="">Team. 광광언택트</h3><blockquote id="1ed3ea2b-3e96-470c-bfe6-7b09e60bae6d" class="">아이디어를 현실로 구현할 멋진 팀원을 소개합니다. 🔥</blockquote><p id="e40ee246-dea8-45a2-85a1-40aacc36499f" class="">💻   <strong>DEV</strong><div class="indented"><p id="eb2fd9dc-b34f-41dc-bfcd-d8b71a43cb4f" class=""><strong>이재원</strong> <mark class="highlight-gray"><em>(</em></mark><mark class="highlight-gray"><em><a href="https://github.com/LeeJaeWonLJW">https://github.com/LeeJaeWonLJW</a></em></mark><mark class="highlight-gray"><em>)</em></mark><div class="indented"><p id="7313c723-a25e-48c1-86b5-e175667cc683" class="">2020 OSS 공개소프트웨어개발자 (Web3.py)</p><p id="b7b08d0c-3dd6-45fc-b91b-584d4f4e7f51" class="">광운대학교 정보융합학부</p></div></p><p id="f21c34f9-baca-40ce-95a3-aef61b7acb41" class=""><strong>박준영</strong> <mark class="highlight-gray"><em>(</em></mark><mark class="highlight-gray"><a href="https://github.com/uvae">https://github.com/uvae</a></mark><mark class="highlight-gray"><em>)</em></mark><div class="indented"><p id="e2b07303-d6d0-419c-8c8d-968ee9e6a7de" class="">BoB 7th 보안컨설팅</p><p id="a3e768f5-40ca-48ca-9543-279fc5191c2a" class="">광운대학교 컴퓨터정보공학부</p></div></p></div></p><p id="06471426-a8e5-42de-a52c-b0f3981b4485" class="">🎨   <strong>DESIGN</strong><div class="indented"><p id="765e9400-fcbb-4e40-9e8b-73d1986b4f33" class=""><strong>강희지</strong><div class="indented"><p id="f6bfed6f-2ae4-4b0f-a6dd-b7bdde742453" class="">광운대학교 정보융합학부</p></div></p><p id="dfdf30d9-2a7e-4e9c-ac02-ef149f707c3f" class=""><strong>박규원</strong><div class="indented"><p id="78c40aec-a5a6-4a34-8eb6-7d30b483514a" class="">광운대학교 정보융합학부</p></div></p></div></p><p id="aa980cca-f780-45ee-b4b0-d2cdfe8a0149" class="">
+</p><p id="4a56e24a-5f53-4e42-abfc-83725592092f" class="">
+</p><ul id="9fd481f4-30d7-41a7-9024-7ac7c3601290" class="toggle"><li><details open=""><summary><em>참고 자료</em></summary><ul id="69ee2600-9a48-4ed4-877f-89d53aefdafb" class="bulleted-list"><li>정부 부처 야외 활동 권장) <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148871663">https://www.korea.kr/news/policyNewsView.do?newsId=148871663</a></li></ul><ul id="6a95f40a-30b1-4c10-979a-e1d6a990285e" class="bulleted-list"><li>관악구 녹지 공간 조성) <a href="http://www.gwanak.go.kr/site/enews/bbs/board_view.do?spid=7&amp;sid=3&amp;aid=9556">http://www.gwanak.go.kr/site/enews/bbs/board_view.do?spid=7&amp;sid=3&amp;aid=9556</a> </li></ul><ul id="f34517a6-14a9-431e-9419-62ad68664f9c" class="bulleted-list"><li>한국관광공사 언택트 관광지) <a href="https://kto.visitkorea.or.kr/kor/notice/news/press/board/view.kto?id=441764&amp;rnum=3">https://kto.visitkorea.or.kr/kor/notice/news/press/board/view.kto?id=441764&amp;rnum=3</a></li></ul></details></li></ul><p id="0c104d93-0372-49f9-8d43-11a97f484094" class="">
+</p><p id="55c2d09e-149e-4795-9bc7-b750591d1aa7" class="">
+</p></div></article></body></html>
